@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class PenjualanChart extends ChartWidget
 {
-    protected static ?string $heading = 'Grafik';
+    protected static ?string $heading = 'Grafik penjualan Bakso';
 
     protected function getData(): array
     {
@@ -36,8 +36,8 @@ class PenjualanChart extends ChartWidget
                 [
                     'label' => 'Total Penjualan (Rp)',
                     'data' => $data,
-                    'backgroundColor' => 'rgba(54, 162, 235, 0.2)',
-                    'borderColor' => 'rgba(54, 162, 235, 1)',
+                    'backgroundColor' => 'rgba(235, 54, 54, 0.2)',
+                    'borderColor' => 'rgba(235, 54, 205, 1)',
                     'borderWidth' => 2,
                     'fill' => true,
                 ],
