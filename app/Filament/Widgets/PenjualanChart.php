@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class PenjualanChart extends ChartWidget
 {
-    protected static ?string $heading = 'Grafik Penjualan';
+    protected static ?string $heading = 'Grafik Penjualan perbulan';
 
     protected function getData(): array
     {
