@@ -49,6 +49,7 @@ class BarangResource extends Resource
                         'liter' => 'Liter',
                     ])
                     ->nullable(),
+                    
             ]);
     }
 
