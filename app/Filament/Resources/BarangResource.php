@@ -21,6 +21,15 @@ class BarangResource extends Resource
 
     protected static ?string $navigationLabel = 'Bahan Baku';
 
+    public static function canViewAny(): bool
+    {
+        return auth()->user()->isAdmin() || auth()->user()->isProduksi();
+    }
+
+    public static function canCreate(): bool
+    {
+        return auth()->user()->isAdmin();
+    }
     public static function form(Form $form): Form
     {
         return $form
@@ -80,8 +89,10 @@ class BarangResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->visible(fn () => auth()->user()->isAdmin()), 
+                Tables\Actions\DeleteAction::make()
+                    ->visible(fn () => auth()->user()->isAdmin()),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
