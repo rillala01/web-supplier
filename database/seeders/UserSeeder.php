@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         // 1. Akun buat Big Boss (Admin)
         // Bisa akses semua menu termasuk Penjualan & Laporan
         User::updateOrCreate(
-            ['email' => 'admin@example.com'], // Kuncinya di email biar gak duplikat
+            ['email' => 'admin@gmail.com'], // Kuncinya di email biar gak duplikat
             [
                 'name' => 'Super Admin',
                 'role' => User::ROLE_ADMIN, 
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
         // 2. Akun buat Tim Dapur (Produksi)
         // Cuma bisa akses menu Produksi, gak bisa liat duit/penjualan
         User::updateOrCreate(
-            ['email' => 'dapur@example.com'],
+            ['email' => 'produksi@gmail.com'],
             [
                 'name' => 'Staff Produksi',
                 'role' => User::ROLE_PRODUKSI,

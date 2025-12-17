@@ -26,7 +26,6 @@ class BarangResource extends Resource
         return auth()->user()->isAdmin() || auth()->user()->isProduksi();
     }
 
-    // 2. Siapa yang boleh NAMBAH bahan baku baru? Cuma Admin
     public static function canCreate(): bool
     {
         return auth()->user()->isAdmin();
